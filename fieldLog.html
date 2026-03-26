@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Field Chronicles | Artisan's Attic</title>
+    <!-- Same fonts as the main page for consistency -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="journal-bg">
+
+    <!-- Navigation Bar -->
+    <nav class="dwarf-nav">
+        <div class="logo">THE ARTISAN'S ATTIC</div>
+        <ul>
+            <li><a href="index.html">The Hall</a></li>
+            <li><a href="workshop.html">The Workshop</a></li>
+            <li><a href="fieldLog.html" class="active">Field Log</a></li>
+            <li><a href="commissions.html">Commissions</a></li>
+            <li><a href="about.html">About the Maker</a></li>
+        </ul>
+    </nav>
+
+    <main class="journal-container">
+        <header class="workshop-header">
+            <h1>The Field Chronicles</h1>
+            <p>A traveler's record of gear, gatherings, and legendary manifestations in the wild.</p>
+        </header>
+
+        <!-- The Scrapbook Grid -->
+        <div class="journal-grid">
+            
+            <!-- Entry 1 -->
+            <div class="journal-entry">
+                <div class="tape-piece"></div>
+                <img src="images/con-1.jpg" alt="Steampunk Paladin at DragonCon">
+                <div class="entry-meta">
+                    <span class="location">📍 DragonCon</span>
+                    <span class="date">The 14th of Harvest</span>
+                </div>
+                <p class="journal-note">The steam-cannon held up through three days of heavy skirmishing. The brass patina is aging perfectly.</p>
+            </div>
+
+            <!-- Entry 2 -->
+            <div class="journal-entry">
+                <div class="tape-piece"></div>
+                <img src="images/con-2.jpg" alt="Dwarf Scout at Ren Faire">
+                <div class="entry-meta">
+                    <span class="location">📍 Bristol Ren Faire</span>
+                    <span class="date">Midsummer Solstice</span>
+                </div>
+                <p class="journal-note">Tested the new leather bracers. The cardboard reinforcement is indistinguishable from steel at twenty paces.</p>
+            </div>
+
+            <!-- Entry 3 -->
+            <div class="journal-entry">
+                <div class="tape-piece"></div>
+                <img src="images/con-3.jpg" alt="Workshop tinkering">
+                <div class="entry-meta">
+                    <span class="location">📍 The Home Workshop</span>
+                    <span class="date">The 4th Day of High Summer's Threshold</span>
+                </div>
+                <p class="journal-note">Warrior outfit completed with dual sword and axe.</p>
+            </div>
+
+            <!-- Entry 4 -->
+            <div class="journal-entry">
+                <div class="tape-piece"></div>
+                <img src="images/con-4.jpg" alt="Field expedition with the Aether-Rifle">
+                <div class="entry-meta">
+                    <span class="location">📍 The Home Workshop</span>
+                    <span class="date">Waning Moon</span>
+                </div>
+                <p class="journal-note">Finalizing the blueprint for the 'Aether-Rifle'. Needs more gears.</p>
+            </div>
+
+            <!-- Entry 5 -->
+            <div class="journal-entry">
+                <div class="tape-piece"></div>
+                <img src="images/con-5.jpg" alt="DragonCon presentation">
+                <div class="entry-meta">
+                    <span class="location">📍 DragonCon</span>
+                    <span class="date">Waning Moon</span>
+                </div>
+                <p class="journal-note">Finalizing the blueprint for the 'Aether-Rifle'. Needs more gears.</p>
+            </div>
+
+            <!-- Entry 6 -->
+            <div class="journal-entry">
+                <div class="tape-piece"></div>
+                <img src="images/con-6.jpg" alt="Field expedition with the Aether-Rifle">
+                <div class="entry-meta">
+                    <span class="location">📍 The Home Workshop</span>
+                    <span class="date">Waning Moon</span>
+                </div>
+                <p class="journal-note">Finalizing the blueprint for the 'Aether-Rifle'. Needs more gears.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Reusing the Modal from Workshop for Pop-ups -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="fullImage">
+        <div id="caption"></div>
+    </div>
+
+    <!-- Script to handle pop-up images -->
+    <script>
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("fullImage");
+        const captionText = document.getElementById("caption");
+
+        document.querySelectorAll('.journal-entry img').forEach(img => {
+            img.onclick = function() {
+                modal.style.display = "flex";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        });
+
+        document.querySelector('.close-modal').onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+<footer class="dwarf-footer">
+    <div class="footer-content">
+        <p>&copy; 2026 THE ARTISAN'S ATTIC | Masterwork Manifestations</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/t.m.knight.2025" target="_blank" class="social-icon">Facebook</a>
+            <span class="divider">|</span>
+            <a href="https://instagram.com" target="_blank" class="social-icon">Instagram</a>
+        </div>
+        <p class="tagline">"Turning the Mundane into the Masterwork"</p>
+    </div>
+</footer>
+
+</body>
+</html>

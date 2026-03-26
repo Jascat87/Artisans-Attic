@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Artisan's Workshop</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+</head>
+<body class="workshop-bg">
+
+    <nav class="dwarf-nav">
+        <div class="logo">THE ARTISAN'S ATTIC</div>
+        <ul>
+            <li><a href="index.html">The Hall</a></li>
+            <li><a href="workshop.html" class="active">The Workshop</a></li>
+            <li><a href="fieldLog.html">Field Log</a></li>
+            <li><a href="commissions.html">Commissions</a></li>
+            <li><a href="about.html">About the Maker</a></li>
+        </ul>
+    </nav>
+
+    <main class="workshop-container">
+        <header class="workshop-header">
+            <h1>The Masterwork Gallery</h1>
+            <p>Artifacts currently available or previously manifested in the workshop.</p>
+        </header>
+
+        <div class="gallery-grid">
+            <!-- Project Card 1: Repurposed Prop -->
+            <div class="gallery-card">
+                <div class="card-seal">VETTED</div>
+                <img src="images/steampunk-hand-cannon.jpg" alt="Steampunk Hand-Cannon">
+                <div class="card-info">
+                    <h3>Dwarf-Tech Hand-Cannon</h3>
+                    <p>Base: Modified Maverick Chassis. Accents: Hand-aged brass & leather wrap.</p>
+                    <span class="price-tag">Available for Gold</span>
+                </div>
+            </div>
+
+            <!-- Project Card 2: Cloth/Leather Outfit -->
+            <div class="gallery-card">
+                <div class="card-seal">SOLD</div>
+                <img src="images/leather-armor.jpg" alt="Rogue Leather Armor">
+                <div class="card-info">
+                    <h3>Wayfinder's Gambeson</h3>
+                    <p>Weathered heavy cotton & reinforced cardboard "brigandine" plating.</p>
+                    <span class="price-tag">Manifested</span>
+                </div>
+            </div>
+            
+            <!-- Add more cards as needed -->
+             <div class="gallery-card">
+                <div class="card-seal">SOLD</div>
+                <img src="images/longshot.jpg" alt="longshot sniper rifle">
+                <div class="card-info">
+                    <h3>Longshot Sniper Rifle</h3>
+                    <p>Repurposed from a nerf longshot, enhanced with steampunk aesthetics.</p>
+                    <span class="price-tag">Manifested</span>
+                </div>
+            </div>
+
+            <div class="gallery-card">
+                <div class="card-seal">SOLD</div>
+                <img src="images/war-hammer.jpg" alt="War Hammer">
+                <div class="card-info">
+                    <h3>War Hammer</h3>
+                    <p>A sturdy war hammer with a steampunk twist.</p>
+                    <span class="price-tag">Manifested</span>
+                </div>
+        </div>
+
+        <div class="gallery-card">
+                <div class="card-seal">SOLD</div>
+                <img src="images/rocket-launcher.jpg" alt="Rocket Launcher">
+                <div class="card-info">
+                    <h3>Rocket Launcher</h3>
+                    <p>Repurposed from a toy rocket launcher, enhanced with steampunk aesthetics.</p>
+                    <span class="price-tag">Manifested</span>
+                </div>
+            </div>
+
+        <div class="gallery-card">
+                <div class="card-seal">SOLD</div>
+                <img src="images/unicorn-gun.jpg" alt="Unicorn Gun">
+                <div class="card-info">
+                    <h3>Unicorn Gun</h3>
+                    <p>A whimsical gun with a unicorn theme.</p>
+                    <span class="price-tag">Manifested</span>
+                </div>
+            </div>
+    </main>
+
+        <!-- The Pop-up Overlay -->
+        <div id="imageModal" class="modal">
+            <span class="close-modal">&times;</span>
+            <img class="modal-content" id="fullImage">
+            <div id="caption"></div>
+        </div>
+
+        <script>
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("fullImage");
+            const captionText = document.getElementById("caption");
+
+            // Select all images in the gallery
+            document.querySelectorAll('.gallery-card img').forEach(img => {
+                img.onclick = function() {
+                    modal.style.display = "flex";
+                    modalImg.src = this.src;
+                    captionText.innerHTML = this.alt; // Uses the 'alt' text as a title!
+                }
+            });
+
+            // Close when the 'X' is clicked
+            document.querySelector('.close-modal').onclick = function() {
+                modal.style.display = "none";
+            }
+            
+            // Close when clicking anywhere outside the image
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+
+        <footer class="dwarf-footer">
+    <div class="footer-content">
+        <p>&copy; 2026 THE ARTISAN'S ATTIC | Masterwork Manifestations</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/t.m.knight.2025" target="_blank" class="social-icon">Facebook</a>
+            <span class="divider">|</span>
+            <a href="https://instagram.com" target="_blank" class="social-icon">Instagram</a>
+        </div>
+        <p class="tagline">"Turning the Mundane into the Masterwork"</p>
+    </div>
+</footer>
+
+</body>
+</html>
